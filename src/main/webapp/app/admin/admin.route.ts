@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { auditsRoute } from './audits/audits.route';
 import { configurationRoute } from './configuration/configuration.route';
 import { docsRoute } from './docs/docs.route';
 import { healthRoute } from './health/health.route';
@@ -8,9 +9,17 @@ import { metricsRoute } from './metrics/metrics.route';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 
-const ADMIN_ROUTES = [configurationRoute, docsRoute, healthRoute, logsRoute, metricsRoute];
+const ADMIN_ROUTES = [auditsRoute, configurationRoute, docsRoute, healthRoute, logsRoute, metricsRoute];
 
 export const adminState: Routes = [
+  {
+    path: 'user-management',
+    data: {
+      authorities: ['ROLE_ADMIN']
+    },
+    canActivate: [UserRouteAccessService],
+    loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementModule)
+  },
   {
     path: '',
     data: {

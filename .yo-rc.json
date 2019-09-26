@@ -1,8 +1,7 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.mycompany.myapp",
-      "nativeLanguage": "en"
+      "packageName": "com.mycompany.myapp"
     },
     "jhipsterVersion": "6.3.1",
     "applicationType": "monolith",
@@ -12,17 +11,16 @@
     "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "no",
-    "enableHibernateCache": false,
     "websocket": false,
-    "databaseType": "no",
-    "devDatabaseType": "no",
-    "prodDatabaseType": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
     "searchEngine": false,
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "Yjg5YzRkOGEwNjAxNjljNjIxODdjMGIyOTUwNTU0YmQ1OGM5YTY1MjkyMTg0NTFkYjU0Y2FiYmNiYzlkMjczYmNhN2Q3Zjk2NTY3YTk0ZTNlOWVjMTFiYTliNTYzOWI5M2M5ZGRjNTY3NTdhY2NlMzU3NTkzMGQ1NmE1ZDc4YWQ=",
+    "jwtSecretKey": "NWQ1ZDdmMTM0MDgyODQ4NTZkNzZmYzVhZDE3NmU2OTdjMDA0OTMyMzAzMzg5ZWY3NGE0ZGFmZjlmZTdhNjMwYWJlMTE3ZmMxMjBlZGExYTlkZWJkOGE1NjMwNmRiNGYxNGMwOGQ2OGNmOTZmZmQ5MDhkYzljZmI2ODlkMzEyYWE=",
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
@@ -34,9 +32,7 @@
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "enableTranslation": true,
-    "nativeLanguage": "en",
-    "languages": ["en"],
+    "enableTranslation": false,
     "blueprints": []
   }
 }

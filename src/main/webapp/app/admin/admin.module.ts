@@ -4,6 +4,7 @@ import { MyappSharedModule } from 'app/shared/shared.module';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import { adminState } from './admin.route';
+import { AuditsComponent } from './audits/audits.component';
 import { LogsComponent } from './logs/logs.component';
 import { JhiMetricsMonitoringComponent } from './metrics/metrics.component';
 import { JhiHealthModalComponent } from './health/health-modal.component';
@@ -18,6 +19,7 @@ import { JhiDocsComponent } from './docs/docs.component';
     RouterModule.forChild(adminState)
   ],
   declarations: [
+    AuditsComponent,
     LogsComponent,
     JhiConfigurationComponent,
     JhiHealthCheckComponent,

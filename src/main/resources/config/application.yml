@@ -65,6 +65,19 @@ spring:
     active: #spring.profiles.active#
   jmx:
     enabled: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
   messages:
     basename: i18n/messages
   main:
@@ -72,13 +85,6 @@ spring:
   mvc:
     favicon:
       enabled: false
-  security:
-    user:
-      name: admin
-      password: admin
-      roles:
-        - ADMIN
-        - USER
   task:
     execution:
       thread-name-prefix: myapp-task-
