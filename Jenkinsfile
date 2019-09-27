@@ -48,9 +48,12 @@ node {
     }
 	stage('depoly package') {
 		    sh "cp target/*.war /opt/apache-tomcat-8.5.46/webapps/ROOT.war"
+			sh "sleep 3s"
 	}
 	stage('start tomcat') {
 	        sh "/opt/apache-tomcat-8.5.46/bin/startup.sh && sleep 3s"
+			sh "/opt/apache-tomcat-8.5.46/bin/startup.sh && sleep 3s"
+			
 	}
 	
 }
