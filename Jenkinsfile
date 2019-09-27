@@ -37,8 +37,6 @@ node {
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
     stage('quality analysis') {
-        withSonarQubeEnv('sonar4.1.0') {
-            sh "./mvnw -ntp initialize sonar:sonar"
+            sh "./mvnw -T 6 sonar:sonar -Dmaven.skip.test=true -Dsonar.host.url=http://localhost:9000/ -Dsonar.login=admin -Dsonar.password=adminkey"
         }
-    }
 }
