@@ -90,5 +90,6 @@ module.exports = (options) => ({
             inject: 'body'
         }),
         new BaseHrefWebpackPlugin({ baseHref: '/' })
+		new BaseHrefWebpackPlugin({ baseHref: '/sampleapp' })
     ]
 });
