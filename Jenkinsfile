@@ -24,7 +24,7 @@ node {
 
 
     stage('packaging') {
-        sh "/usr/share/mvn -T 4 clean verify -DskipTests"
+        sh "/usr/bin/mvn -T 4 clean verify -DskipTests"
         //archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 	
