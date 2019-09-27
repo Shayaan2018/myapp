@@ -38,5 +38,17 @@ node {
     }
     stage('quality analysis') {
             sh "./mvnw -T 6 sonar:sonar -Dmaven.skip.test=true -Dsonar.host.url=http://localhost:9000/ -Dsonar.login=admin -Dsonar.password=adminkey"
-        }
+    }
+	stage('stop tomcat') {
+	        sh "/opt/apache-tomcat-8.5.46/bin/shutdown.sh"
+			sh "rm -rf /opt/apache-tomcat-8.5.46/webapps/myapp*"
+			sh "rm -rf /opt/apache-tomcat-8.5.46/temp/*"
+    }
+	stage('depoly package') {
+		    sh "cp target/*.war /opt/apache-tomcat-8.5.46/webapps/"
+	}
+	stage(start tomcat) {
+	        sh "/opt/apache-tomcat-8.5.46/bin/shutdown.sh"
+	}
+	
 }
