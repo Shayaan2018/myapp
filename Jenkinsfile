@@ -48,7 +48,7 @@ node {
 		    sh "cp target/*.war /opt/apache-tomcat-8.5.46/webapps/"
 	}
 	stage('start tomcat') {
-	        sh "/opt/apache-tomcat-8.5.46/bin/shutdown.sh"
+	        sh "/opt/apache-tomcat-8.5.46/bin/startup.sh"
 	}
 	
 }
