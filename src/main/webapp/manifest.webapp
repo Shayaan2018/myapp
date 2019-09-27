@@ -1,6 +1,6 @@
 {
-  "name": "Myapp",
-  "short_name": "Myapp",
+  "name": "JhipsterSampleApplication",
+  "short_name": "JhipsterSampleApplication",
   "icons": [
       {
           "src": "./content/images/jhipster_family_member_1_head-192.png",

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MyappSharedModule } from 'app/shared/shared.module';
+import { JhipsterSampleApplicationSharedModule } from 'app/shared/shared.module';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import { adminState } from './admin.route';
@@ -14,7 +14,7 @@ import { JhiDocsComponent } from './docs/docs.component';
 
 @NgModule({
   imports: [
-    MyappSharedModule,
+    JhipsterSampleApplicationSharedModule,
     /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     RouterModule.forChild(adminState)
   ],
@@ -29,4 +29,4 @@ import { JhiDocsComponent } from './docs/docs.component';
   ],
   entryComponents: [JhiHealthModalComponent]
 })
-export class MyappAdminModule {}
+export class JhipsterSampleApplicationAdminModule {}

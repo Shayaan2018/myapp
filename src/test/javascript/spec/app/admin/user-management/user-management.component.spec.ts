@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async, inject, fakeAsync, tick } from '@angu
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { MyappTestModule } from '../../../test.module';
+import { JhipsterSampleApplicationTestModule } from '../../../test.module';
 import { UserMgmtComponent } from 'app/admin/user-management/user-management.component';
 import { UserService } from 'app/core/user/user.service';
 import { User } from 'app/core/user/user.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [MyappTestModule],
+        imports: [JhipsterSampleApplicationTestModule],
         declarations: [UserMgmtComponent]
       })
         .overrideTemplate(UserMgmtComponent, '')

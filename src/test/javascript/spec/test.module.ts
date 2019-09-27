@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgModule, ElementRef, Renderer } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiDataUtils, JhiDateUtils, JhiEventManager, JhiAlertService, JhiParseLinks } from 'ng-jhipster';
+import { JhiLanguageService, JhiDataUtils, JhiDateUtils, JhiEventManager, JhiAlertService, JhiParseLinks } from 'ng-jhipster';
 
+import { MockLanguageService, MockLanguageHelper } from './helpers/mock-language.service';
+import { JhiLanguageHelper } from 'app/core/language/language.helper';
 import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { MockAccountService } from './helpers/mock-account.service';
@@ -18,6 +20,14 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
     JhiDataUtils,
     JhiDateUtils,
     JhiParseLinks,
+    {
+      provide: JhiLanguageService,
+      useClass: MockLanguageService
+    },
+    {
+      provide: JhiLanguageHelper,
+      useClass: MockLanguageHelper
+    },
     {
       provide: JhiEventManager,
       useClass: MockEventManager
@@ -61,4 +71,4 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
   ],
   imports: [HttpClientTestingModule]
 })
-export class MyappTestModule {}
+export class JhipsterSampleApplicationTestModule {}

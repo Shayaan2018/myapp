@@ -12,11 +12,11 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
       [
         {
           path: 'admin',
-          loadChildren: () => import('./admin/admin.module').then(m => m.MyappAdminModule)
+          loadChildren: () => import('./admin/admin.module').then(m => m.JhipsterSampleApplicationAdminModule)
         },
         {
           path: 'account',
-          loadChildren: () => import('./account/account.module').then(m => m.MyappAccountModule)
+          loadChildren: () => import('./account/account.module').then(m => m.JhipsterSampleApplicationAccountModule)
         },
         ...LAYOUT_ROUTES
       ],
@@ -25,4 +25,4 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
   ],
   exports: [RouterModule]
 })
-export class MyappAppRoutingModule {}
+export class JhipsterSampleApplicationAppRoutingModule {}

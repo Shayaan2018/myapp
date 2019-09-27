@@ -7,29 +7,30 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { MyappSharedModule } from 'app/shared/shared.module';
-import { MyappCoreModule } from 'app/core/core.module';
-import { MyappAppRoutingModule } from './app-routing.module';
-import { MyappHomeModule } from './home/home.module';
-import { MyappEntityModule } from './entities/entity.module';
+import { JhipsterSampleApplicationSharedModule } from 'app/shared/shared.module';
+import { JhipsterSampleApplicationCoreModule } from 'app/core/core.module';
+import { JhipsterSampleApplicationAppRoutingModule } from './app-routing.module';
+import { JhipsterSampleApplicationHomeModule } from './home/home.module';
+import { JhipsterSampleApplicationEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
+import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    MyappSharedModule,
-    MyappCoreModule,
-    MyappHomeModule,
+    JhipsterSampleApplicationSharedModule,
+    JhipsterSampleApplicationCoreModule,
+    JhipsterSampleApplicationHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    MyappEntityModule,
-    MyappAppRoutingModule
+    JhipsterSampleApplicationEntityModule,
+    JhipsterSampleApplicationAppRoutingModule
   ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -54,4 +55,4 @@ import { ErrorComponent } from './layouts/error/error.component';
   ],
   bootstrap: [JhiMainComponent]
 })
-export class MyappAppModule {}
+export class JhipsterSampleApplicationAppModule {}
