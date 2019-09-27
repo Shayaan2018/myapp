@@ -27,6 +27,16 @@ node {
         //archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 	
+	stage('backend tests') {
+        try {
+            sh "./mvnw -ntp verify"
+        } catch(err) {
+            throw err
+        } finally {
+            junit '**/target/test-results/**/TEST-*.xml'
+        }
+    }
+	
 	stage('quality analysis') {
             sh "./mvnw -T 6 sonar:sonar -Dmaven.skip.test=true -Dsonar.host.url=http://localhost:9000/ -Dsonar.login=admin -Dsonar.password=adminkey"
     }
