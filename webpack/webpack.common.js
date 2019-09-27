@@ -89,6 +89,6 @@ module.exports = (options) => ({
             chunksSortMode: 'manual',
             inject: 'body'
         }),
-		new BaseHrefWebpackPlugin({ baseHref: '/sampleapp' })
+		new BaseHrefWebpackPlugin({ baseHref: '/' })
     ]
 });

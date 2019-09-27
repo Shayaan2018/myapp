@@ -31,9 +31,16 @@ node {
             sh "./mvnw -T 6 sonar:sonar -Dmaven.skip.test=true -Dsonar.host.url=http://localhost:9000/ -Dsonar.login=admin -Dsonar.password=adminkey"
     }
 	
-	
+	stage('stop tomcat') {
+	        sh "/opt/apache-tomcat-8.5.46/bin/shutdown.sh"
+			sh "rm -rf /opt/apache-tomcat-8.5.46/webapps/ROOT*"
+			sh "rm -rf /opt/apache-tomcat-8.5.46/temp/*"
+    }
 	stage('depoly package') {
-		    deploy adapters: [tomcat8(credentialsId: '3fe2f204-8ee6-44a2-8f3e-5daa27f8c30c', path: '', url: 'http://localhost:8080')], contextPath: 'sampleapp', war: '**/target/*.war'
+		    sh "cp target/*.war /opt/apache-tomcat-8.5.46/webapps/ROOT.war"
+	}
+	stage('start tomcat') {
+	        sh "/opt/apache-tomcat-8.5.46/bin/startup.sh && sleep 3s"
 	}
 	
 }
